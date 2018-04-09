@@ -48,7 +48,7 @@ class ClassificationViewController: UIViewController, UIImagePickerControllerDel
     
     func classifyImage(image: UIImage){
         //URL for your AI Vision instance and model
-        let urlString = "http://9.196.150.152:9080/powerai-vision/api/dlapis/d9c00e75-8cf0-4ab3-aef5-392d2e2b9648"
+        let urlString = "API URL HERE"
         
         //Set up HTTP Request Object
         var request  = URLRequest(url: URL(string: urlString)!)

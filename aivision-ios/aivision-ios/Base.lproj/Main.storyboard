@@ -51,8 +51,8 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dc-gp-XgY">
-                                <rect key="frame" x="166" y="527" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="150" y="527" width="75.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -64,8 +64,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaw-zK-eO4">
-                                <rect key="frame" x="166" y="107" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="150.5" y="104" width="75.5" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -73,8 +73,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DVq-pu-cqP" firstAttribute="leading" secondItem="AHS-aq-CYT" secondAttribute="leading" constant="16" id="4QY-Ab-rza"/>
-                            <constraint firstItem="DVq-pu-cqP" firstAttribute="top" secondItem="Oaw-zK-eO4" secondAttribute="bottom" constant="80" id="7Gz-ri-wd4"/>
-                            <constraint firstItem="Oaw-zK-eO4" firstAttribute="top" secondItem="AHS-aq-CYT" secondAttribute="top" constant="43" id="J5S-5G-OZ6"/>
+                            <constraint firstItem="DVq-pu-cqP" firstAttribute="top" secondItem="Oaw-zK-eO4" secondAttribute="bottom" constant="71" id="7Gz-ri-wd4"/>
+                            <constraint firstItem="Oaw-zK-eO4" firstAttribute="top" secondItem="AHS-aq-CYT" secondAttribute="top" constant="40" id="J5S-5G-OZ6"/>
                             <constraint firstItem="AHS-aq-CYT" firstAttribute="trailing" secondItem="DVq-pu-cqP" secondAttribute="trailing" constant="16" id="RtC-Rc-mV0"/>
                             <constraint firstItem="9Dc-gp-XgY" firstAttribute="centerX" secondItem="AHS-aq-CYT" secondAttribute="centerX" id="T4t-tV-Dfc"/>
                             <constraint firstItem="AjA-ew-hY9" firstAttribute="trailing" secondItem="AHS-aq-CYT" secondAttribute="trailing" id="UYD-6Y-42H"/>
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BuH-Ln-DdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789.60000000000002" y="82.3088455772114"/>
+            <point key="canvasLocation" x="774" y="72"/>
         </scene>
     </scenes>
 </document>
