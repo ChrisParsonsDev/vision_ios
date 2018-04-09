@@ -4,7 +4,7 @@ This native Swift iOS application is designed to take models trained in [PowerAI
 
 ## Description
 
-The mega simple UI lets you select an image from the device camera or camera roll and then classify the image against the PowerAI Vision API.
+The simple UI lets you select an image from the device camera or camera roll and then classify the image against the PowerAI Vision API.
 
 ## Screenshot
 

@@ -48,7 +48,7 @@ class ClassificationViewController: UIViewController, UIImagePickerControllerDel
     
     func classifyImage(image: UIImage){
         //URL for your AI Vision instance and model
-        let urlString = "API URL HERE"
+        let urlString = "AI Vision API URL"
         
         //Set up HTTP Request Object
         var request  = URLRequest(url: URL(string: urlString)!)
