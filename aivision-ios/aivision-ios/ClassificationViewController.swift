@@ -48,7 +48,7 @@ class ClassificationViewController: UIViewController, UIImagePickerControllerDel
     
     func classifyImage(image: UIImage){
         //URL for your AI Vision instance and model
-        let urlString = "AI Vision API URL"
+        let urlString = "Insert API URL Here"
         
         //Set up HTTP Request Object
         var request  = URLRequest(url: URL(string: urlString)!)
@@ -62,7 +62,7 @@ class ClassificationViewController: UIViewController, UIImagePickerControllerDel
         let fullData = photoDataToFormData(data: imageData,boundary:boundary,fileName:fileName)
         
         request.setValue(String(fullData.count), forHTTPHeaderField: "Content-Length")
-
+        
         
         request.httpBody = fullData
         request.httpShouldHandleCookies = false

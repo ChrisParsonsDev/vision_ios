@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB044054211DA13D009B3C0A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB044053211DA13D009B3C0A /* MenuViewController.swift */; };
 		FBB115832076388200BCE2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB115822076388200BCE2F5 /* AppDelegate.swift */; };
 		FBB115852076388200BCE2F5 /* ClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB115842076388200BCE2F5 /* ClassificationViewController.swift */; };
 		FBB115882076388200BCE2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB115862076388200BCE2F5 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB044053211DA13D009B3C0A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FBB1157F2076388200BCE2F5 /* aivision-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aivision-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB115822076388200BCE2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB115842076388200BCE2F5 /* ClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				FBB1158B2076388300BCE2F5 /* LaunchScreen.storyboard */,
 				FBB1158E2076388300BCE2F5 /* Info.plist */,
 				FBB1159420763B2700BCE2F5 /* BlackBox.swift */,
+				FB044053211DA13D009B3C0A /* MenuViewController.swift */,
 			);
 			path = "aivision-ios";
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				FBB115852076388200BCE2F5 /* ClassificationViewController.swift in Sources */,
 				FBB115832076388200BCE2F5 /* AppDelegate.swift in Sources */,
 				FBB1159520763B2700BCE2F5 /* BlackBox.swift in Sources */,
+				FB044054211DA13D009B3C0A /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +291,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V947GVJ9PG;
 				INFOPLIST_FILE = "aivision-ios/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.christopherkparsons.aivision-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -302,7 +309,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V947GVJ9PG;
 				INFOPLIST_FILE = "aivision-ios/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.christopherkparsons.aivision-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
