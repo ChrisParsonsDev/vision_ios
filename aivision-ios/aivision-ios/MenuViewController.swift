@@ -6,7 +6,6 @@
 //  Copyright © 2018 Chris Parsons. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class MenuViewController: UIViewController{
@@ -22,7 +21,6 @@ class MenuViewController: UIViewController{
         super.viewDidLoad()
         
         //Disable buttons where we don't have them implemented yet.
-        objectDetectionButton.isEnabled = false
         videoButton.isEnabled = false
     
     }
