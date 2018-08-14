@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB044054211DA13D009B3C0A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB044053211DA13D009B3C0A /* MenuViewController.swift */; };
+		FB339E3E2121D43F006E5E5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB339E3D2121D43F006E5E5F /* Default-568h@2x.png */; };
 		FBB115832076388200BCE2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB115822076388200BCE2F5 /* AppDelegate.swift */; };
 		FBB115852076388200BCE2F5 /* ClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB115842076388200BCE2F5 /* ClassificationViewController.swift */; };
 		FBB115882076388200BCE2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB115862076388200BCE2F5 /* Main.storyboard */; };
 		FBB1158A2076388300BCE2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB115892076388300BCE2F5 /* Assets.xcassets */; };
 		FBB1158D2076388300BCE2F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB1158B2076388300BCE2F5 /* LaunchScreen.storyboard */; };
 		FBB1159520763B2700BCE2F5 /* BlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1159420763B2700BCE2F5 /* BlackBox.swift */; };
+		FBF155912121AC7500D7D7DB /* ObjectDetectionClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF155902121AC7500D7D7DB /* ObjectDetectionClassification.swift */; };
+		FBF9DF66212193DD006DF5EB /* DetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF9DF65212193DD006DF5EB /* DetectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB044053211DA13D009B3C0A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		FB339E3D2121D43F006E5E5F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FBB1157F2076388200BCE2F5 /* aivision-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aivision-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB115822076388200BCE2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB115842076388200BCE2F5 /* ClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +30,8 @@
 		FBB1158C2076388300BCE2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBB1158E2076388300BCE2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBB1159420763B2700BCE2F5 /* BlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackBox.swift; sourceTree = "<group>"; };
+		FBF155902121AC7500D7D7DB /* ObjectDetectionClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionClassification.swift; sourceTree = "<group>"; };
+		FBF9DF65212193DD006DF5EB /* DetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,7 @@
 		FBB115762076388200BCE2F5 = {
 			isa = PBXGroup;
 			children = (
+				FB339E3D2121D43F006E5E5F /* Default-568h@2x.png */,
 				FBB115812076388200BCE2F5 /* aivision-ios */,
 				FBB115802076388200BCE2F5 /* Products */,
 			);
@@ -63,6 +72,9 @@
 				FBB1158B2076388300BCE2F5 /* LaunchScreen.storyboard */,
 				FBB1158E2076388300BCE2F5 /* Info.plist */,
 				FBB1159420763B2700BCE2F5 /* BlackBox.swift */,
+				FB044053211DA13D009B3C0A /* MenuViewController.swift */,
+				FBF9DF65212193DD006DF5EB /* DetectionViewController.swift */,
+				FBF155902121AC7500D7D7DB /* ObjectDetectionClassification.swift */,
 			);
 			path = "aivision-ios";
 			sourceTree = "<group>";
@@ -126,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBB1158D2076388300BCE2F5 /* LaunchScreen.storyboard in Resources */,
+				FB339E3E2121D43F006E5E5F /* Default-568h@2x.png in Resources */,
 				FBB1158A2076388300BCE2F5 /* Assets.xcassets in Resources */,
 				FBB115882076388200BCE2F5 /* Main.storyboard in Resources */,
 			);
@@ -139,8 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBB115852076388200BCE2F5 /* ClassificationViewController.swift in Sources */,
+				FBF9DF66212193DD006DF5EB /* DetectionViewController.swift in Sources */,
 				FBB115832076388200BCE2F5 /* AppDelegate.swift in Sources */,
+				FBF155912121AC7500D7D7DB /* ObjectDetectionClassification.swift in Sources */,
 				FBB1159520763B2700BCE2F5 /* BlackBox.swift in Sources */,
+				FB044054211DA13D009B3C0A /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +303,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V947GVJ9PG;
 				INFOPLIST_FILE = "aivision-ios/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.christopherkparsons.aivision-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -302,7 +321,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V947GVJ9PG;
 				INFOPLIST_FILE = "aivision-ios/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.christopherkparsons.aivision-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
