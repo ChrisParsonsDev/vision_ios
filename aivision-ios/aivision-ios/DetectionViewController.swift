@@ -17,7 +17,7 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: Properties
-    var objectsDetected: [ObjectDetectionClassification] = [ObjectDetectionClassification(classification: "Hello", confidence: "world")]
+    var objectsDetected: [ObjectDetectionClassification] = [ObjectDetectionClassification(classification: "Classifications will appear here", confidence: "")]
 
     
     //MARK: Lifecycle Methods
@@ -32,7 +32,7 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
         //Disable camera if there's not one..
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
-        //Initate Table View
+        //Initate TableView footer to hide empty rows
         tableView.tableFooterView = UIView(frame: .zero)
     }
 
@@ -54,8 +54,8 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
     
     func classifyImage(image: UIImage){
         //URL for your AI Vision instance and model
-        let urlString = "Insert API URL Here"
-        
+        let urlString = "https://ny1.ptopenlab.com/AIVision/api/dlapis/b64e46b6-92fa-4740-9b66-7d70ee9a5d78"
+
         //Set up HTTP Request Object
         var request  = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = "POST"
@@ -63,8 +63,8 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         request.setValue("gzip, deflate", forHTTPHeaderField: "Accept-Encoding")
         
-        let imageData = UIImagePNGRepresentation(image)!
-        let fileName = "upload.png"
+        let imageData = UIImageJPEGRepresentation(image, 0.4)!
+        let fileName = "upload.jpg"
         let fullData = photoDataToFormData(data: imageData,boundary:boundary,fileName:fileName)
         
         request.setValue(String(fullData.count), forHTTPHeaderField: "Content-Length")
@@ -77,17 +77,29 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
         let task = URLSession.shared.dataTask(with: request, completionHandler: {data, response, error in
             guard let data = data, error == nil else { return }
             do {
+                // Set TableView data to nil.
+                self.objectsDetected = []
                 //Convert response to JSON
                 let jsonResponse = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
-                guard let _ = jsonResponse["classified"] as? [String: AnyObject] else {
-                    print("Could not find classification")
+                guard let classifications = jsonResponse["classified"] as? NSArray else {
+                    print("Could not find classifications")
                     return
                 }
+                // Retrieve values from API and add them to tableview data.
+                for detectedObject in classifications{
+                    //Extract label and confidence from API.
+                    let detectedObjectDictionary = detectedObject as! NSDictionary
+                    let label = detectedObjectDictionary.object(forKey: "label") as! String
+                    let confidence = detectedObjectDictionary.object(forKey: "confidence") as! NSNumber
+                    //Create new ObjectDetectionClassification
+                    let thisClassification = ObjectDetectionClassification(classification: label, confidence: String(format: "%.2f%%", (confidence.doubleValue * 100)))
+                    //Add to TableView data.
+                    self.objectsDetected.append(thisClassification)
+                }
                 
-                // Retrieve values from API
-                
-                //Update Labels
+                //Update TableView
                 performUIUpdatesOnMain{
+                    self.tableView.reloadData()
                 }
             } catch let error as NSError {
                 print(error)
@@ -140,6 +152,7 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             detectionImageView.image = image
+            objectsDetected = [ObjectDetectionClassification(classification: "Classifications will appear here", confidence: "")]
             //Classify the image
             classifyImage(image: image)
         }

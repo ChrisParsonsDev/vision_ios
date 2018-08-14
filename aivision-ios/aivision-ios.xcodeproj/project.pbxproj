@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB044054211DA13D009B3C0A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB044053211DA13D009B3C0A /* MenuViewController.swift */; };
+		FB339E3E2121D43F006E5E5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB339E3D2121D43F006E5E5F /* Default-568h@2x.png */; };
 		FBB115832076388200BCE2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB115822076388200BCE2F5 /* AppDelegate.swift */; };
 		FBB115852076388200BCE2F5 /* ClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB115842076388200BCE2F5 /* ClassificationViewController.swift */; };
 		FBB115882076388200BCE2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB115862076388200BCE2F5 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		FB044053211DA13D009B3C0A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		FB339E3D2121D43F006E5E5F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FBB1157F2076388200BCE2F5 /* aivision-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aivision-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB115822076388200BCE2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB115842076388200BCE2F5 /* ClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		FBB115762076388200BCE2F5 = {
 			isa = PBXGroup;
 			children = (
+				FB339E3D2121D43F006E5E5F /* Default-568h@2x.png */,
 				FBB115812076388200BCE2F5 /* aivision-ios */,
 				FBB115802076388200BCE2F5 /* Products */,
 			);
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBB1158D2076388300BCE2F5 /* LaunchScreen.storyboard in Resources */,
+				FB339E3E2121D43F006E5E5F /* Default-568h@2x.png in Resources */,
 				FBB1158A2076388300BCE2F5 /* Assets.xcassets in Resources */,
 				FBB115882076388200BCE2F5 /* Main.storyboard in Resources */,
 			);
