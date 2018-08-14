@@ -54,7 +54,7 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
     
     func classifyImage(image: UIImage){
         //URL for your AI Vision instance and model
-        let urlString = "https://ny1.ptopenlab.com/AIVision/api/dlapis/b64e46b6-92fa-4740-9b66-7d70ee9a5d78"
+        let urlString = "API URL HERE"
 
         //Set up HTTP Request Object
         var request  = URLRequest(url: URL(string: urlString)!)
