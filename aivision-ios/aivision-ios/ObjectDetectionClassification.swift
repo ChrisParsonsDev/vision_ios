@@ -11,4 +11,8 @@ import Foundation
 struct ObjectDetectionClassification {
     let classification: String
     let confidence: String
+    let xmax: Int
+    let xmin: Int
+    let ymax: Int
+    let ymin: Int
 }

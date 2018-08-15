@@ -17,7 +17,7 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: Properties
-    var objectsDetected: [ObjectDetectionClassification] = [ObjectDetectionClassification(classification: "Classifications will appear here", confidence: "")]
+    var objectsDetected: [ObjectDetectionClassification] = [ObjectDetectionClassification(classification: "Classifications will appear here", confidence: "", xmax: 0, xmin: 0, ymax: 0, ymin: 0)]
 
     
     //MARK: Lifecycle Methods
@@ -53,8 +53,8 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
     
     
     func classifyImage(image: UIImage){
-        //URL for your AI Vision instance and model
-        let urlString = "API URL HERE"
+        //MARK: URL for your AI Vision instance and model
+        let urlString = "ENTER API URL HERE"
 
         //Set up HTTP Request Object
         var request  = URLRequest(url: URL(string: urlString)!)
@@ -87,12 +87,17 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
                 }
                 // Retrieve values from API and add them to tableview data.
                 for detectedObject in classifications{
-                    //Extract label and confidence from API.
+                    //Extract values from API.
                     let detectedObjectDictionary = detectedObject as! NSDictionary
                     let label = detectedObjectDictionary.object(forKey: "label") as! String
                     let confidence = detectedObjectDictionary.object(forKey: "confidence") as! NSNumber
+                    let xmax = detectedObjectDictionary.object(forKey: "xmax") as! NSNumber
+                    let xmin = detectedObjectDictionary.object(forKey: "xmin") as! NSNumber
+                    let ymax = detectedObjectDictionary.object(forKey: "ymax") as! NSNumber
+                    let ymin = detectedObjectDictionary.object(forKey: "ymin") as! NSNumber
+
                     //Create new ObjectDetectionClassification
-                    let thisClassification = ObjectDetectionClassification(classification: label, confidence: String(format: "%.2f%%", (confidence.doubleValue * 100)))
+                    let thisClassification = ObjectDetectionClassification(classification: label, confidence: String(format: "%.2f%%", (confidence.doubleValue * 100)), xmax: xmax.intValue, xmin: xmin.intValue, ymax: ymax.intValue, ymin: ymin.intValue)
                     //Add to TableView data.
                     self.objectsDetected.append(thisClassification)
                 }
@@ -100,12 +105,48 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
                 //Update TableView
                 performUIUpdatesOnMain{
                     self.tableView.reloadData()
+                    //Iterate over objectsDetected and draw rectangle for each.
+                    self.detectionImageView.image! = self.drawDetectionRectangleOnImage(image: self.detectionImageView.image!, objectsDetected: self.objectsDetected)
+                
                 }
             } catch let error as NSError {
                 print(error)
             }
         })
         task.resume()
+    }
+    
+    func drawDetectionRectangleOnImage(image: UIImage, objectsDetected: [ObjectDetectionClassification]) -> UIImage {
+        let imageSize = image.size
+        let scale: CGFloat = 0
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, scale)
+        
+        image.draw(at: CGPoint(x: 0, y:0))
+        //Iterate over detected objects, adding a rectangle for each.
+        for object in objectsDetected {
+            let width = object.xmax - object.xmin
+            let height = object.ymax - object.ymin
+            let rectangle = CGRect(x: object.xmin, y: object.ymin, width: width, height: height)
+        
+            //Set rectangle properties
+            let context = UIGraphicsGetCurrentContext()
+            context!.setLineWidth(10)
+            UIColor.green.setStroke()
+            UIRectFrame(rectangle)
+            
+            //Add classification label
+            let textAttributes: [NSAttributedStringKey: AnyObject] = [
+                .foregroundColor : UIColor.black,
+                .backgroundColor: UIColor.green,
+                .font : UIFont(name: "AppleSDGothicNeo-Bold", size: 60.00)!,
+                
+            ]
+            object.classification.draw(in: rectangle, withAttributes: textAttributes)
+        }
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
     }
     
     func photoDataToFormData(data:Data,boundary:String,fileName:String) -> Data {
@@ -152,7 +193,7 @@ class DetectionViewController: UIViewController, UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             detectionImageView.image = image
-            objectsDetected = [ObjectDetectionClassification(classification: "Classifications will appear here", confidence: "")]
+            objectsDetected = [ObjectDetectionClassification(classification: "Classifications will appear here", confidence: "", xmax: 0, xmin: 0, ymax: 0, ymin: 0)]
             //Classify the image
             classifyImage(image: image)
         }

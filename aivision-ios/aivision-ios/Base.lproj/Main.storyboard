@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-T6-ysD">
-                                <rect key="frame" x="16" y="258" width="343" height="30"/>
+                                <rect key="frame" x="16" y="280" width="343" height="30"/>
                                 <state key="normal" title="Image Classification"/>
                                 <connections>
                                     <segue destination="RDL-eZ-0pA" kind="show" id="44d-1g-g6k"/>
@@ -50,21 +50,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePd-Xe-UN4">
-                                <rect key="frame" x="16" y="380" width="343" height="30"/>
+                                <rect key="frame" x="16" y="356" width="343" height="30"/>
                                 <state key="normal" title="Video"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ePd-Xe-UN4" firstAttribute="top" secondItem="STq-pS-9eZ" secondAttribute="bottom" constant="32" id="9BJ-KB-9bX"/>
-                            <constraint firstItem="STq-pS-9eZ" firstAttribute="leading" secondItem="ePd-Xe-UN4" secondAttribute="leading" id="9F6-cg-xnW"/>
-                            <constraint firstItem="vSQ-T6-ysD" firstAttribute="trailing" secondItem="zDR-n5-wpd" secondAttribute="trailingMargin" id="Miq-JD-J9D"/>
-                            <constraint firstItem="vSQ-T6-ysD" firstAttribute="leading" secondItem="zDR-n5-wpd" secondAttribute="leadingMargin" id="YyH-3q-9WR"/>
-                            <constraint firstItem="vSQ-T6-ysD" firstAttribute="leading" secondItem="STq-pS-9eZ" secondAttribute="leading" id="Z2O-i8-dxk"/>
-                            <constraint firstItem="vSQ-T6-ysD" firstAttribute="top" secondItem="Gvi-Bk-yhj" secondAttribute="top" constant="194" id="dJG-ai-Yu9"/>
-                            <constraint firstItem="STq-pS-9eZ" firstAttribute="trailing" secondItem="ePd-Xe-UN4" secondAttribute="trailing" id="pVD-yY-q30"/>
-                            <constraint firstItem="STq-pS-9eZ" firstAttribute="centerY" secondItem="zDR-n5-wpd" secondAttribute="centerY" id="w2y-YQ-Dba"/>
-                            <constraint firstItem="vSQ-T6-ysD" firstAttribute="trailing" secondItem="STq-pS-9eZ" secondAttribute="trailing" id="x2X-c9-w0a"/>
+                            <constraint firstItem="STq-pS-9eZ" firstAttribute="trailing" secondItem="ePd-Xe-UN4" secondAttribute="trailing" id="28P-Tn-q7h"/>
+                            <constraint firstItem="ePd-Xe-UN4" firstAttribute="top" secondItem="STq-pS-9eZ" secondAttribute="bottom" constant="8" symbolic="YES" id="AMr-gK-Xd1"/>
+                            <constraint firstItem="vSQ-T6-ysD" firstAttribute="trailing" secondItem="STq-pS-9eZ" secondAttribute="trailing" id="CKL-gg-46R"/>
+                            <constraint firstItem="vSQ-T6-ysD" firstAttribute="leading" secondItem="STq-pS-9eZ" secondAttribute="leading" id="H8L-A9-gQa"/>
+                            <constraint firstItem="STq-pS-9eZ" firstAttribute="leading" secondItem="ePd-Xe-UN4" secondAttribute="leading" id="Kuk-Mq-0od"/>
+                            <constraint firstItem="STq-pS-9eZ" firstAttribute="centerY" secondItem="zDR-n5-wpd" secondAttribute="centerY" id="NYl-yy-E6s"/>
+                            <constraint firstItem="vSQ-T6-ysD" firstAttribute="trailing" secondItem="zDR-n5-wpd" secondAttribute="trailingMargin" id="NeY-vt-QM7"/>
+                            <constraint firstItem="STq-pS-9eZ" firstAttribute="top" secondItem="vSQ-T6-ysD" secondAttribute="bottom" constant="8" symbolic="YES" id="nIR-rb-aXq"/>
+                            <constraint firstItem="vSQ-T6-ysD" firstAttribute="leading" secondItem="zDR-n5-wpd" secondAttribute="leadingMargin" id="pMk-Nk-eU0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gvi-Bk-yhj"/>
                     </view>

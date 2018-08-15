@@ -57,8 +57,8 @@ class ClassificationViewController: UIViewController, UIImagePickerControllerDel
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         request.setValue("gzip, deflate", forHTTPHeaderField: "Accept-Encoding")
         
-        let imageData = UIImagePNGRepresentation(image)!
-        let fileName = "upload.png"
+        let imageData = UIImageJPEGRepresentation(image, 0.4)!
+        let fileName = "upload.jpg"
         let fullData = photoDataToFormData(data: imageData,boundary:boundary,fileName:fileName)
         
         request.setValue(String(fullData.count), forHTTPHeaderField: "Content-Length")
